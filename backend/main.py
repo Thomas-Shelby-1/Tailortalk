@@ -4,6 +4,8 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 from calendar_utils import create_event, list_events, get_upcoming_events
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), 'backend'))
 
 load_dotenv()
 
@@ -63,3 +65,6 @@ async def chat_endpoint(request: Request):
     except Exception as e:
         print("Gemini or Calendar error:", e)
         return {"reply": f"Error: {str(e)}"}
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=10000, reload=True)
