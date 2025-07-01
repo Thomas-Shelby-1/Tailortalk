@@ -15,5 +15,4 @@ PyYAML==6.0.1
 grpcio==1.62.0
 httplib2==0.22.0
 protobuf==5.29.5
-pydantic-core==1.10.13
 pydantic==2.7.1
